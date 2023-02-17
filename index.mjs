@@ -1,7 +1,7 @@
 import inquirer from 'inquirer';
 import fs from "fs/promises"; 
 
-const {Title, Description, Table_of_contents, Installation, Usage, License, Contributing, Tests, Questions1, Questions2, Questions3} = await inquirer.prompt([
+const {Title, Description, Table_of_contents, Installation, Usage, License, Contributing, Tests, Questions, GitHub_username, GitHub_link} = await inquirer.prompt([
     {
         name: "Title",
         message:  "What is the title of your project?",
@@ -44,17 +44,17 @@ const {Title, Description, Table_of_contents, Installation, Usage, License, Cont
         type: "input",
     },
     {
-        name: "Questions1",
+        name: "Questions",
         message: "If someone has any questions, what is your email so that they can reach out to you?",
         type: "input",
     },
     {
-        name: "Questions2",
+        name: "GitHub_username",
         message: "What is your GitHub username?",
         type: "input",
     },
     {
-        name: "Questions3",
+        name: "GitHub_link",
         message: "What is your GitHub link?",
         type: "input",
     },
@@ -84,9 +84,9 @@ let README = `
   * [License: ] (#License)
   * [Contributing: ] (#Contributing)
   * [Tests: ] (#Tests)
-  * [Got any questions? ] (#Questions1)
-  * [You can find me by my GitHub username: ] (#Questions2)
-  * [Checkout more of my projects: ] (#Questions3)
+  * [Questions ] (#Questions1)
+  * [GitHub_username: ] (#Questions2)
+  * [GitHub_link: ] (#Questions3)
 
   ## Installation
   ### ${Installation}
@@ -104,9 +104,9 @@ let README = `
   ### ${Tests}
 
   ## Got any questions? You can reach out to me on:
-  ### ${Questions1}
-  ### ${Questions2}
-  ### [Github Link: ] (${Questions3})
+  ### ${Questions}
+  ### ${GitHub_username}
+  ### [Github Link: ] (${GitHub_link})
 `
 fs.writeFile("readme.md", README) //should be the same as let README = ``
 
