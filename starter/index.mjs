@@ -1,8 +1,6 @@
 import inquirer from 'inquirer';
 import fs from "fs/promises"; 
 
-//const generateMarkdown = require("./utils/generateMarkdown"); //markdown has some static functions inside, one of them is the generate read.me file
-
 const {Title, Description, Table_of_contents, Installation, Usage, License, Contributing, Tests, Questions1, Questions2, Questions3} = await inquirer.prompt([
     {
         name: "Title",
@@ -32,7 +30,7 @@ const {Title, Description, Table_of_contents, Installation, Usage, License, Cont
     {
         name: "License",
         message: "Under what license is your app covered?",
-        type: "input",
+        type: "list",
         choices: ['MIT', 'Apache 2.0', 'GPL', 'none']
     },
     {
@@ -72,39 +70,45 @@ function license(license){
 }
 
 let README = `
-  #${Title}
+  # ${Title}
+  
+  ## Demonstration Video
+  ### [] (readme_files_using_nodejs.webm)
 
-  ##Description
-  ###${Description}
+  ## Description
+  ### ${Description}
 
-  ##Table of Contents
+  ## Table of Contents
   * [Installation: ] (#Installation) 
+  * [Usage: ] (#Usage) 
   * [License: ] (#License)
   * [Contributing: ] (#Contributing)
   * [Tests: ] (#Tests)
-  * [Questions: ] (#Questions)
+  * [Got any questions? ] (#Questions1)
+  * [You can find me by my GitHub username: ] (#Questions2)
+  * [Checkout more of my projects: ] (#Questions3)
 
-  ##Installation
-  ###${Installation}
+  ## Installation
+  ### ${Installation}
+  
+  ## Usage
+  ### ${Usage}
 
-  ##License
-  ###${license(License)}
+  ## License
+  ### ${license(License)}
 
-  ##Who has contributed to this app, and how can you contribute?
-  ${Contributing}
+  ## Who has contributed to this app, and how can you contribute?
+  ### ${Contributing}
 
-  ##How can you test the app?
-  ###${Tests}
+  ## How can you test the app?
+  ### ${Tests}
 
-  ##Got any questions? You can reach out to me on:
-  ###${Questions1}
-  ###${Questions2}
-  ###[Github Link: ] (https://github.com/${Questions3})
+  ## Got any questions? You can reach out to me on:
+  ### ${Questions1}
+  ### ${Questions2}
+  ### [Github Link: ] (${Questions3})
 `
-fs.writeFile("readme.md", README.md)
+fs.writeFile("readme.md", README) //should be the same as let README = ``
 
-//you can do git status to see if node_modules are included. If not included they will be in gray.
-//the most recent inquirer is 9.1.4
-// temporal literal ` `
 //* [Installation: ] (#Installation) ==>  the *[] is what will be displayed on the page and the # is the link to a specific section.
 //${This is how we add variables in temporal literals}
