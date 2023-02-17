@@ -22,7 +22,7 @@
   You can use the app by right clicking on index.mjs and opening the file in integrated terminal. Install the latest version of inquirer by running the command “npm install inquirer@^9.1.4” or “npm i inquirer”. Run the command "node index.mjs" in the command line and answer the questions as prompted to create your own read.me file!
 
   ## License
-  
+  None
 
   ## Contributing
   NA
