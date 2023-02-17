@@ -73,42 +73,42 @@ let README = `
   # ${Title}
   
   ## Demonstration Video
-  ### [] (readme_files_using_nodejs.webm)
+  ### [Demo] (./readme_files_using_nodejs.webm)
 
   ## Description
   ### ${Description}
 
   ## Table of Contents
-  * [Installation: ] (#Installation) 
-  * [Usage: ] (#Usage) 
-  * [License: ] (#License)
-  * [Contributing: ] (#Contributing)
-  * [Tests: ] (#Tests)
-  * [Questions ] (#Questions1)
-  * [GitHub_username: ] (#Questions2)
-  * [GitHub_link: ] (#Questions3)
+  * [Installation: ] (##Installation) 
+  * [Usage: ] (##Usage) 
+  * [License: ] (##License)
+  * [Who has contributed to this app, and how can you contribute?: ] (##Contributing)
+  * [How can you test the app? ] (##Tests)
+  * [Got any questions? You can reach out to me on: ] (##Questions?)
+  * [GitHub_username: ] (##Questions?)
+  * [GitHub_link: ] (##Questions?)
 
   ## Installation
-  ### ${Installation}
+  ${Installation}
   
   ## Usage
-  ### ${Usage}
+  ${Usage}
 
   ## License
-  ### ${license(License)}
+  ${license(License)}
 
-  ## Who has contributed to this app, and how can you contribute?
-  ### ${Contributing}
+  ## Contributing
+  ${Contributing}
 
-  ## How can you test the app?
-  ### ${Tests}
+  ## Tests
+  ${Tests}
 
-  ## Got any questions? You can reach out to me on:
-  ### ${Questions}
-  ### ${GitHub_username}
-  ### [Github Link: ] (${GitHub_link})
+  ## Questions?
+  ${Questions}
+  ${GitHub_username}
+  [Github Link: ] (${GitHub_link})
 `
-fs.writeFile("readme.md", README) //should be the same as let README = ``
+fs.writeFile("README.md", README) //should be the same as let README = ``
 
-//* [Installation: ] (#Installation) ==>  the *[] is what will be displayed on the page and the # is the link to a specific section.
+//* [Installation: ] (##Installation) ==>  the *[] is what will be displayed on the page and the # is the link to a specific section.
 //${This is how we add variables in temporal literals}
