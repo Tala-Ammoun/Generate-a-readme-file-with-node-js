@@ -84,9 +84,7 @@ let README = `
   * [License:](##License)
   * [Who has contributed to this app, and how can you contribute?:](##Contributing)
   * [How can you test the app?](##Tests)
-  * [Got any questions? You can reach out to me on:](##Questions?)
-  * [GitHub_username:](##Questions?)
-  * [GitHub_link:](##Questions?)
+  * [Got any questions?](##Questions?)
 
   ## Installation
   ${Installation}
@@ -103,9 +101,9 @@ let README = `
   ## Tests
   ${Tests}
 
-  ## Questions?
-  ${Questions}
-  ${GitHub_username}
+  ## Got any questions?
+  Email: ${Questions}
+  GitHub username: ${GitHub_username}
   [Github Link:](${GitHub_link})
 `
 fs.writeFile("README.md", README) //should be the same as let README = ``
