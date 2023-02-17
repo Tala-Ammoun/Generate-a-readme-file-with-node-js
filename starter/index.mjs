@@ -1,25 +1,9 @@
 import inquirer from 'inquirer';
 import fs from "fs/promises"; 
 
-const fs = require("fs");
-const path = require('path');
-const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown"); //markdown has some static functions inside, one of them is the generate read.me file
+//const generateMarkdown = require("./utils/generateMarkdown"); //markdown has some static functions inside, one of them is the generate read.me file
 
-// array of questions for user
-// const questions = [
-//     "What is the title of your project?",
-//     "Describe your project",
-//     "Table of contents",
-//     "How can people install your app?",
-//     "How can people use your app?",
-//     "Under what license is your app covered?",
-//     "How can others contribute?",
-//     "How can others test your code?",
-//     "If someone has any questions, how can they reach out to you? Ex: GitHub username, GitHub link, or email?"
-// ];
-
-const {Title, Description, Table_of_contents, Installation, Usage, License, Contributing, Tests, Questions} = await inquirer.prompt([
+const {Title, Description, Table_of_contents, Installation, Usage, License, Contributing, Tests, Questions1, Questions2, Questions3} = await inquirer.prompt([
     {
         name: "Title",
         message:  "What is the title of your project?",
@@ -49,10 +33,11 @@ const {Title, Description, Table_of_contents, Installation, Usage, License, Cont
         name: "License",
         message: "Under what license is your app covered?",
         type: "input",
+        choices: ['MIT', 'Apache 2.0', 'GPL', 'none']
     },
     {
         name: "Contributing",
-        message: "How can others contribute?",
+        message: "Who has contributed to this app and how can others contribute?",
         type: "input",
     },
     {
@@ -61,25 +46,65 @@ const {Title, Description, Table_of_contents, Installation, Usage, License, Cont
         type: "input",
     },
     {
-        name: "Questions",
-        message: "If someone has any questions, how can they reach out to you? Ex: GitHub username, GitHub link, or email?",
+        name: "Questions1",
+        message: "If someone has any questions, what is your email so that they can reach out to you?",
+        type: "input",
+    },
+    {
+        name: "Questions2",
+        message: "What is your GitHub username?",
+        type: "input",
+    },
+    {
+        name: "Questions3",
+        message: "What is your GitHub link?",
         type: "input",
     },
   ])
 
-
-// function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile("README.md", README.md)
+function license(license){
+    if(license !== 'none'){ //if they choose anything except none
+        return `[license: ] (https://img.shields.io/badge/license-${license}-blue.svg)` //display a badge
+    }
+    else {
+        return '' //if they choose none, don't display anything.
+    }
 }
 
-// function to initialize program
-function init() {
-    // npm init -y
-}
+let README = `
+  #${Title}
 
-// function call to initialize program
-init();
+  ##Description
+  ###${Description}
 
-//you can do git status to see if node_modules are included
+  ##Table of Contents
+  * [Installation: ] (#Installation) 
+  * [License: ] (#License)
+  * [Contributing: ] (#Contributing)
+  * [Tests: ] (#Tests)
+  * [Questions: ] (#Questions)
+
+  ##Installation
+  ###${Installation}
+
+  ##License
+  ###${license(License)}
+
+  ##Who has contributed to this app, and how can you contribute?
+  ${Contributing}
+
+  ##How can you test the app?
+  ###${Tests}
+
+  ##Got any questions? You can reach out to me on:
+  ###${Questions1}
+  ###${Questions2}
+  ###[Github Link: ] (https://github.com/${Questions3})
+`
+fs.writeFile("readme.md", README.md)
+
+//you can do git status to see if node_modules are included. If not included they will be in gray.
 //the most recent inquirer is 9.1.4
+// temporal literal ` `
+//* [Installation: ] (#Installation) ==>  the *[] is what will be displayed on the page and the # is the link to a specific section.
+//${This is how we add variables in temporal literals}
