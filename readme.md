@@ -2,16 +2,16 @@
   # Creating read.me files using node.js
   
   ## Demonstration Video
-  [Demo](readme_files_using_nodejs.webm)
+  [Demo](readme_files_using_nodejs.mp4)
 
   ## Description
   This app enables developers to create read.me files quickly so that they can dedicate more time to more important work.
 
   ## Table of Contents
-  * [Installation:](##Installation) 
-  * [Usage:](##Usage) 
-  * [License:](##License)
-  * [Who has contributed to this app, and how can you contribute?:](##Contributing)
+  * [Installation](##Installation) 
+  * [Usage](##Usage) 
+  * [License](##License)
+  * [Who has contributed to this app, and how can you contribute?](##Contributing)
   * [How can you test the app?](##Tests)
   * [Got any questions?](##Questions?)
 
@@ -31,6 +31,6 @@
   NA
 
   ## Got any questions?
-  Email: talaammoun@gmail.com
-  GitHub username: Tala-Ammoun
-  [Github Link:](https://github.com/Tala-Ammoun/Generate-a-readme-file-with-node-js.git)
+  * Email: talaammoun@gmail.com
+  * GitHub username: Tala-Ammoun
+  * [Github Link](https://github.com/Tala-Ammoun/Generate-a-readme-file-with-node-js.git)

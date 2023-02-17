@@ -73,16 +73,16 @@ let README = `
   # ${Title}
   
   ## Demonstration Video
-  [Demo](readme_files_using_nodejs.webm)
+  [Demo](readme_files_using_nodejs.mp4)
 
   ## Description
   ${Description}
 
   ## Table of Contents
-  * [Installation:](##Installation) 
-  * [Usage:](##Usage) 
-  * [License:](##License)
-  * [Who has contributed to this app, and how can you contribute?:](##Contributing)
+  * [Installation](##Installation) 
+  * [Usage](##Usage) 
+  * [License](##License)
+  * [Who has contributed to this app, and how can you contribute?](##Contributing)
   * [How can you test the app?](##Tests)
   * [Got any questions?](##Questions?)
 
@@ -102,9 +102,9 @@ let README = `
   ${Tests}
 
   ## Got any questions?
-  Email: ${Questions}
-  GitHub username: ${GitHub_username}
-  [Github Link:](${GitHub_link})
+  * Email: ${Questions}
+  * GitHub username: ${GitHub_username}
+  * [Github Link](${GitHub_link})
 `
 fs.writeFile("README.md", README) //should be the same as let README = ``
 
